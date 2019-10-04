@@ -25,21 +25,23 @@ humans = [
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with 'D':
 print("Starts with D:")
-a = [person for person in humans if person.name.startswith("D")]
+a = [person.name for person in humans if person.name.startswith("D")]
 
 print(a)
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name ends in "e".
 print("Ends with e:")
-b = [person for person in humans if person.name.endswith("e")]
+b = [person.name for person in humans if person.name.endswith("e")]
 
 print(b)
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with any letter between 'C' and 'G' inclusive.
 print("Starts between C and G, inclusive:")
-c = [person.name for person in humans if person.name[0] >= "C" and person.name[0] <= "G"]
+c = [
+    person.name for person in humans if person.name[0] >= "C" and person.name[0] <= "G"
+]
 
 print(c)
 
@@ -71,7 +73,7 @@ print(f)
 # list, except with all the names uppercase and the ages with 5 added to them.
 # The "humans" list should be unmodified.
 print("All names uppercase:")
-g = [f" {person.name.upper()}, {person.age + 5}" for person in humans]
+g = [Human(person.name.upper(), person.age + 5) for person in humans]
 
 print(g)
 

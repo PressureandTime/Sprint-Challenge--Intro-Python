@@ -39,7 +39,7 @@ print(b)
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with any letter between 'C' and 'G' inclusive.
 print("Starts between C and G, inclusive:")
-c = [person.name for person in humans if person.name[0] >= "C" and person.name[0] < "G"]
+c = [person.name for person in humans if person.name[0] >= "C" and person.name[0] <= "G"]
 
 print(c)
 
@@ -60,9 +60,9 @@ print(e)
 # inclusive.
 print("Names and ages between 27 and 32:")
 f = [
-    (f"{person.name}, {person.age}")
+    (person.name, person.age)
     for person in humans
-    if person.age > 27 and person.age < 32
+    if person.age >= 27 and person.age <= 32
 ]
 
 print(f)

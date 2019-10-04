@@ -3,9 +3,21 @@
 # Also change it so the num_wheels defaults to 4 if not specified when the
 # object is constructed.
 
+class Vehicle:
+    def __init__(self):
+        pass
 
-class GroundVehicle:
+
+class FlightVehicle(Vehicle):
+    def __init__(self):
+        super().__init__()
+        pass
+
+
+
+class GroundVehicle(Vehicle):
     def __init__(self, num_wheels=4):
+        super().__init__()
         self.num_wheels = num_wheels
 
     def drive(self):

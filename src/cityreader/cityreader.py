@@ -24,31 +24,9 @@ class City:
 import os
 import csv
 
-cities = []
-cwd = os.getcwd()
-
-def cityreader(cities=[]):
-    # TODO Implement the functionality to read from the 'cities.csv' file
-    # For each city record, create a new City instance and add it to the
-    # `cities` list
-    with open(f"{cwd}\src\cityreader\cities.csv", newline="") as csvfile:
-        list_of_cities = csv.reader(csvfile)
-        for city in list_of_cities:
-          # name, lat, lon
-          for i in range(len(cities)):
-            if i != 0:
-              cities.append(City(city[0], city[3], city[4]))
-
-    return cities
 
 
-cityreader(cities)
 
-
-# Print the list of cities (name, lat, lon), 1 record per line.
-# for i in range(len(cities)):
-#     if i != 0:
-#         print(cities[i])
 
 # STRETCH GOAL!
 #

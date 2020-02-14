@@ -8,6 +8,9 @@ class City:
         self.lat = lat
         self.lon = lon
 
+    def __repr__(self):
+        return (f'The city of {self.name} is at latitude:{self.lat} and longitude:{self.lon}')
+
 
 # We have a collection of US cities with population over 750,000 stored in the
 # file "cities.csv". (CSV stands for "comma-separated values".)
@@ -21,12 +24,36 @@ class City:
 #
 # Note that the first line of the CSV is header that describes the fields--this
 # should not be loaded into a City object.
+
 import os
 import csv
+cities = []
+
+filename = 'src/cityreader/cities.csv'
 
 
+def cityreader(cities=[]):
+    # TODO Implement the functionality to read from the 'cities.csv' file
+    # For each city record, create a new City instance and add it to the
+    # `cities` list
+    with open(filename, newline='') as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        next(csv_reader, None)
+        for row in csv_reader:
+            cities.append(City(row[0], float(row[3]), float(row[4])))
+    return cities
 
 
+cityreader(cities)
+
+for c in cities:
+    print(c)
+"""
+! Important
+Run this file and you will notice that the reader is working fine, it iterates and makes new
+instances of City class. I have made __repr__ method for City class.
+
+"""
 
 # STRETCH GOAL!
 #

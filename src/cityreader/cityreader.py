@@ -29,7 +29,7 @@ import os
 import csv
 cities = []
 
-filename = 'src/cityreader/cities.csv'
+filename = 'cities.csv'
 
 
 def cityreader(cities=[]):
